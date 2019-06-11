@@ -9,7 +9,7 @@ from flask_cors import CORS,cross_origin
 from custom_cors import crossdomain
 app=Flask(__name__)
 api=Api(app)
-@crossdomain(origin='*',headers=['Access-Control-Allow-Origin','Content-Type'])
+@crossdomain(origin='*',headers=['Access-Control-Allow-Methods: DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT','Access-Control-Allow-Headers: accept, content-type','Access-Control-Allow-Origin:http://localhost:4200','Content-Type:application/json'])
 @app.route('/api/test', methods=['POST', 'GET','OPTIONS'])
 def index():
     if(request.method=='POST'):
