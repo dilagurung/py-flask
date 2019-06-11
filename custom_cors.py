@@ -8,7 +8,7 @@ def crossdomain(origin=None, methods=None, headers=None,
                 automatic_options=True):
     if methods is not None:
         methods = ', '.join(sorted(x.upper() for x in methods))
-    if headers is not None and not isinstance(headers):
+    if headers is not None and not isinstance(headers,str):
         headers = ', '.join(x.upper() for x in headers)
     if not isinstance(origin, str):
         origin = ', '.join(origin)
