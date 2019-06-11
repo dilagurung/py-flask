@@ -8,9 +8,9 @@ from flask_restful import Resource,Api
 from flask_cors import CORS,cross_origin
 from custom_cors import crossdomain
 app=Flask(__name__)
-
-"""
-@app.route('/',methods=['GET','POST'])
+api=Api(app)
+@crossdomain(origin='*',headers=['access-control-allow-origin','Content-Type'])
+@app.route('/api/test', methods=['POST', 'GET','OPTIONS'])
 def index():
     if(request.method=='POST'):
      some_json=request.get_json()
@@ -22,7 +22,7 @@ def index():
 def getMultiplication(num):
     return jsonify({'resule':num*10})
 """
-
+...
 api=Api(app)
 
 class ClassOne(Resource):
@@ -42,7 +42,8 @@ class ClassTwo(Resource):
 api.add_resource(ClassOne,'/api/test')
 api.add_resource(ClassTwo,'/multi/<int:num>')
 
-
+...
+"""
 
 
 if __name__=="__main__":
