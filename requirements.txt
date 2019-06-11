@@ -1,0 +1,8 @@
+Collecting datetime
+  Downloading https://files.pythonhosted.org/packages/73/22/a5297f3a1f92468cc737f8ce7ba6e5f245fcfafeae810ba37bd1039ea01c/DateTime-4.3-py2.py3-none-any.whl (60kB)
+Requirement already satisfied: pytz in c:\users\oa\pycharmprojects\p1\venv\lib\site-packages (from datetime) (2019.1)
+Collecting zope.interface (from datetime)
+  Downloading https://files.pythonhosted.org/packages/36/3d/bea244aa800e43f5013b55765db189aacb4d7b11adc386654f296e139988/zope.interface-4.6.0-cp27-cp27m-win_amd64.whl (131kB)
+Requirement already satisfied: setuptools in c:\users\oa\pycharmprojects\p1\venv\lib\site-packages (from zope.interface->datetime) (41.0.1)
+Installing collected packages: zope.interface, datetime
+Successfully installed datetime-4.3 zope.interface-4.6.0
