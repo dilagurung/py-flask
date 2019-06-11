@@ -28,10 +28,12 @@ def getMultiplication(num):
 #cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 api=Api(app)
 
-@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 class ClassOne(Resource):
+    @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
     def get(self):
         return {"key":"one"}
+
+    @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
     def post(self):
         some_json=request.get_json()
         return {'key':'modified '+some_json},201
