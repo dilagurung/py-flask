@@ -29,11 +29,11 @@ def getMultiplication(num):
 api=Api(app)
 
 class ClassOne(Resource):
-    @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
+    @cross_origin(origin='*', headers=['Content- Type', 'Authorization','Access-Control-Allow-Origin'])
     def get(self):
         return {"key":"one"}
 
-    @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
+    @cross_origin(origin='*', headers=['Content- Type', 'Authorization','Access-Control-Allow-Origin'])
     def post(self):
         some_json=request.get_json()
         return {'key':'modified '+some_json},201
