@@ -4,12 +4,13 @@
 #https://flask-cors.readthedocs.io/en/latest/  py charm https://www.youtube.com/watch?v=ZVGwqnjOKjk
 from flask import Flask,request,jsonify
 from flask_restful import Resource,Api
-#from flask_cors import CORS
-from flask.ext.cors import CORS, cross_origin
+from flask_cors import CORS,cross_origin
 
 app=Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
 app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 """
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -27,7 +28,7 @@ def getMultiplication(num):
 #cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 api=Api(app)
 
-@cross_origin(origin='*',headers=['Content-Type','Authorization'])
+@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 class ClassOne(Resource):
     def get(self):
         return {"key":"one"}
