@@ -16,7 +16,7 @@ def index():
      some_json=request.get_json()
      return jsonify({"key":some_json})
     if (request.method == 'GET'):
-        return request.json['phone']
+     return request.json['phone']
 
 @app.route('/multi/<int:num>',methods=['GET'])
 def getMultiplication(num):
